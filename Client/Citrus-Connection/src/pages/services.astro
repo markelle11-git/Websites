@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  { id: 'seo', num: '01', title: 'Search Engine Optimization', desc: 'A full-stack SEO program covering technical health, on-page optimization and content — built to rank you for the searches your buyers actually make, and to hold that ranking as algorithms shift.', bullets: ['Technical audits & site-speed fixes', 'Keyword & competitor research', 'On-page and local SEO', 'Link building & digital PR', 'Monthly ranking & traffic reporting'] },
+  { id: 'paid-media', num: '02', title: 'Paid Media & PPC', desc: 'Google, Bing, Meta and LinkedIn campaigns managed toward a target cost-per-acquisition — with weekly optimization instead of set-and-forget budgets.', bullets: ['Search & shopping campaigns', 'Paid social & retargeting', 'Landing page A/B testing', 'Conversion tracking setup', 'Weekly bid & budget optimization'] },
+  { id: 'social', num: '03', title: 'Social Media Marketing', desc: 'Content calendars, community management and paid social built to grow a following that actually engages with your brand — not just watches it scroll by.', bullets: ['Content strategy & calendars', 'Organic posting & community management', 'Paid social campaigns', 'Influencer & UGC coordination', 'Monthly engagement reporting'] },
+  { id: 'web-design', num: '04', title: 'Web Design & Development', desc: 'Fast, conversion-focused websites and landing pages designed around your funnel — built to convert traffic your other channels are already earning.', bullets: ['Custom website design & build', 'Landing pages for campaigns', 'Conversion rate optimization', 'Site speed & Core Web Vitals', 'Ongoing maintenance & support'] },
+  { id: 'content', num: '05', title: 'Content Marketing & Copywriting', desc: 'Blogs, guides, landing pages and email copy written in your brand voice and optimized for the keywords and questions your buyers are searching.', bullets: ['SEO blog & article writing', 'Landing page & website copy', 'Case studies & lead magnets', 'Brand voice & messaging guides', 'Content performance tracking'] },
+  { id: 'reputation', num: '06', title: 'Reputation Management & Email', desc: 'Review generation, listings management and lifecycle email that turn happy customers into public proof and repeat revenue.', bullets: ['Review generation & monitoring', 'Business listings management', 'Email automation & nurture flows', 'Segmentation & list growth', 'Monthly reputation reporting'] },
+];
+
+const steps = [
+  { num: '01', title: 'Audit', copy: 'We review your current channels, competitors and analytics to find the fastest paths to more qualified leads.' },
+  { num: '02', title: 'Strategy', copy: 'You get a written 90-day plan tied to specific pipeline and revenue targets, not deliverables for their own sake.' },
+  { num: '03', title: 'Launch', copy: 'Our team builds and launches campaigns, content and pages — usually live within two to three weeks of kickoff.' },
+  { num: '04', title: 'Optimize', copy: 'Monthly reporting and ongoing testing compound results quarter over quarter, with a strategist on every call.' },
+];
+
+const faqs = [
+  { q: 'How much do your services cost?', a: 'Retainers typically range from $2,000 to $10,000+ per month depending on scope and channel mix. We scope every engagement around a target outcome first, then build the plan and price around it — no generic packages.' },
+  { q: 'How long until we see results?', a: 'Paid media and web conversion improvements often show movement within 4–6 weeks. SEO and content compound more slowly — most clients see meaningful ranking and traffic gains within 90 days, with the biggest gains landing after month four.' },
+  { q: 'Do we have to sign a long-term contract?', a: 'No. We ask for a 90-day initial sprint so a channel has time to find its footing, then move to month-to-month. We keep clients by compounding results, not by locking them into a term.' },
+  { q: 'What industries do you work with?', a: 'Most of our clients are home services, e-commerce, healthcare, real estate and SaaS companies — but the strategy playbook applies to any business with a clear path from lead to revenue.' },
+  { q: 'Will we work with senior people or account juniors?', a: 'Every account is staffed with senior strategists from day one. The person who builds your strategy is the person on your monthly call — we don’t hand accounts off to junior coordinators.' },
+  { q: 'How do you report on results?', a: 'Monthly reports focus on pipeline, cost per lead and closed revenue, with a live dashboard for anyone who wants real-time numbers between calls.' },
+];
+---
+
+<Layout title="Digital Marketing Services | SEO, PPC, Social & Web Design | Citrus Connections" description="SEO, paid media, social media, web design, content marketing and email/reputation services from Citrus Connections — a full-funnel digital marketing agency." active="services">
+
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Services</span>
+      <h1>Six services. One strategy. Built to book calls.</h1>
+      <p class="lede">Every service below can run standalone or as part of a full-funnel plan — priced against the outcome you need, not a menu of hours.</p>
+    </div>
+  </section>
+
+  <section class="anchor-nav">
+    <div class="container anchor-row">
+      {services.map((s) => <a href={`#${s.id}`} class="pill-link">{s.title.split(' ').slice(0, 2).join(' ')}</a>)}
+    </div>
+  </section>
+
+  {services.map((s) => (
+    <section id={s.id} data-reveal class="service-section">
+      <div class="container service-grid">
+        <div>
+          <span class="service-num">{s.num}</span>
+          <h2>{s.title}</h2>
+        </div>
+        <div>
+          <p class="service-desc">{s.desc}</p>
+          <div class="bullet-grid">
+            {s.bullets.map((bullet) => (
+              <div class="bullet-item">
+                <span class="bullet-dot"></span>{bullet}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section data-reveal class="process-section">
+    <div class="container">
+      <div class="process-heading">
+        <span class="eyebrow">How It Works</span>
+        <h2>From first call to compounding results</h2>
+      </div>
+      <div class="process-grid">
+        {steps.map((step) => (
+          <div class="card">
+            <p class="step-num">{step.num}</p>
+            <h3>{step.title}</h3>
+            <p class="step-copy">{step.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="faq-section">
+    <div class="container faq-inner">
+      <div class="faq-heading">
+        <span class="eyebrow">FAQ</span>
+        <h2>Questions we get before someone signs</h2>
+      </div>
+      {faqs.map((faq) => (
+        <details class="faq-item">
+          <summary>
+            {faq.q}
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </summary>
+          <p>{faq.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-row">
+      <h2>Not sure which service fits? Let's talk it through.</h2>
+      <a href="/contact" class="cta-btn">Book a Free Strategy Call</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { padding: 88px clamp(20px, 5vw, 64px) 56px; }
+  .hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .page-hero h1 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.18; margin: 0 0 24px; color: #fff; }
+  .lede { font-size: 17px; line-height: 1.7; margin: 0 auto; max-width: 54ch; color: var(--text-muted); }
+
+  .anchor-nav { padding: 0 clamp(20px, 5vw, 64px) 24px; }
+  .anchor-row { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .pill-link { text-decoration: none; color: var(--accent); border: 1px solid rgba(203, 255, 61, 0.4); padding: 8px 16px; border-radius: 999px; font-size: 13px; transition: background 0.2s ease, color 0.2s ease; }
+  .pill-link:hover { background: var(--accent); color: var(--bg); }
+
+  .service-section { padding: 48px clamp(20px, 5vw, 64px); border-top: 1px solid var(--border); scroll-margin-top: 90px; }
+  .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 36px; }
+  .service-num { display: inline-block; font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 5px 12px; border-radius: 999px; letter-spacing: 0.04em; }
+  .service-grid h2 { font-size: clamp(22px, 2.4vw, 28px); color: #fff; margin: 14px 0 0; }
+  .service-desc { font-size: 15.5px; line-height: 1.7; color: var(--text-muted); margin: 0 0 22px; max-width: 68ch; }
+  .bullet-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 32px; }
+  .bullet-item { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; line-height: 1.5; color: rgba(255, 255, 255, 0.7); }
+  .bullet-dot { width: 6px; height: 6px; border-radius: 999px; background: var(--accent); flex: none; margin-top: 8px; }
+
+  .process-section { padding: 80px clamp(20px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--border); }
+  .process-heading { text-align: center; margin-bottom: 48px; }
+  .process-heading h2 { font-size: clamp(26px, 3vw, 38px); color: #fff; margin: 0; }
+  .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+  .process-grid .card { background: var(--bg); }
+  .step-num { font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--accent); margin: 0 0 16px; letter-spacing: 0.04em; }
+  .process-grid h3 { font-size: 18px; color: #fff; margin: 0 0 10px; }
+  .step-copy { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+
+  .faq-section { padding: 80px clamp(20px, 5vw, 64px); }
+  .faq-inner { max-width: 840px; margin: 0 auto; }
+  .faq-heading { text-align: center; margin-bottom: 44px; }
+  .faq-heading h2 { font-size: clamp(26px, 3vw, 34px); color: #fff; margin: 0; }
+  .faq-item { border-top: 1px solid rgba(255, 255, 255, 0.1); padding: 20px 0; }
+  .faq-item summary {
+    font-family: var(--font-heading); font-weight: 600; font-size: 16px; color: #fff; cursor: pointer;
+    list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: center;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-plus { font-size: 20px; color: var(--accent); flex: none; }
+  .faq-item p { font-size: 14.5px; line-height: 1.7; color: var(--text-muted); margin: 16px 0 0; max-width: 64ch; }
+
+  .cta-banner { background: var(--accent); }
+  .cta-row { padding: 80px clamp(20px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px; }
+  .cta-row h2 { font-size: clamp(26px, 3.4vw, 42px); line-height: 1.15; margin: 0; max-width: 18ch; color: var(--bg); }
+  .cta-btn { text-decoration: none; background: var(--bg); color: var(--accent); padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; transition: transform 0.2s ease; }
+  .cta-btn:hover { transform: translateY(-3px); }
+</style>

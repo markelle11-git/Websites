@@ -1,0 +1,128 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const diffs = [
+  { num: '01', title: 'Senior strategists, always', copy: 'The person who builds your strategy is the person executing it and the person on your monthly call — never a rotating cast of coordinators.' },
+  { num: '02', title: 'Revenue-first reporting', copy: 'We report on pipeline, cost per lead and closed revenue by default. Impressions and reach show up as context, never as the headline.' },
+  { num: '03', title: 'No lock-in contracts', copy: 'Month-to-month after the first 90-day sprint. We keep clients by compounding results, not by trapping them in a term.' },
+  { num: '04', title: 'One team, every channel', copy: 'SEO, paid, content, web and email sit under one roof and one strategy — so channels reinforce each other instead of competing for budget.' },
+];
+
+const values = ['Accountability', 'Plain-English reporting', 'Senior talent only', 'Speed', 'No vanity metrics'];
+---
+
+<Layout title="About Citrus Connections | Digital Marketing Agency Tampa, FL" description="Meet Citrus Connections — a senior-led digital marketing team built on accountability, plain-English reporting and results tied to revenue." active="about">
+
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">About Us</span>
+      <h1>We started Citrus Connections because agencies had stopped being accountable.</h1>
+      <p class="lede">Founded in Tampa in 2019, we built the agency we wished we could hire when we were on the client side — senior strategists, transparent numbers, and a plan that ties back to revenue.</p>
+    </div>
+  </section>
+
+  <section data-reveal class="story-section">
+    <div class="container story-grid">
+      <div>
+        <span class="eyebrow">Our Story</span>
+        <h2>From a two-person side project to a senior-only team</h2>
+        <p>Citrus Connections started with two in-house marketers who kept getting hired to fix what other agencies had broken: keyword-stuffed blogs nobody read, ad accounts optimized for clicks instead of customers, and reporting decks built to hide a bad month rather than explain it.</p>
+        <p>We built the opposite on purpose: a small, senior-only team that treats every retainer like it's the only client we have. No account gets handed to a junior coordinator. No report gets sent that we wouldn't want to receive ourselves.</p>
+        <p>Today we run SEO, paid media, content, web design and lifecycle marketing for growth-stage companies across the country — still small enough that the person who built your strategy is the person answering your calls.</p>
+      </div>
+      <figure class="story-photo" aria-hidden="true">
+        <svg viewBox="0 0 400 500" role="img" aria-label="Illustration representing the Citrus Connections team at work">
+          <rect width="400" height="500" fill="#10141f"/>
+          <rect x="40" y="60" width="320" height="180" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(203,255,61,0.4)" stroke-width="1.5"/>
+          <circle cx="90" cy="110" r="18" fill="#cbff3d" opacity="0.85"/>
+          <rect x="130" y="98" width="150" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+          <rect x="130" y="118" width="100" height="10" rx="5" fill="rgba(255,255,255,0.2)"/>
+          <rect x="60" y="170" width="280" height="50" rx="8" fill="rgba(203,255,61,0.1)"/>
+          <rect x="40" y="270" width="150" height="150" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <rect x="210" y="270" width="150" height="150" rx="12" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <circle cx="115" cy="320" r="22" fill="none" stroke="#cbff3d" stroke-width="3"/>
+          <circle cx="285" cy="320" r="22" fill="none" stroke="#cbff3d" stroke-width="3"/>
+        </svg>
+      </figure>
+    </div>
+  </section>
+
+  <section data-reveal class="mission-section">
+    <div class="container mission-inner">
+      <span class="eyebrow">Our Mission</span>
+      <h2>Make every marketing dollar traceable to a booked call or a closed deal.</h2>
+    </div>
+  </section>
+
+  <section data-reveal class="diffs-section">
+    <div class="container">
+      <div class="diffs-heading">
+        <span class="eyebrow">What Makes Us Different</span>
+        <h2>Four things you won't find at a typical agency</h2>
+      </div>
+      <div class="diffs-grid">
+        {diffs.map((d) => (
+          <div class="card">
+            <p class="diff-num">{d.num}</p>
+            <h3>{d.title}</h3>
+            <p class="diff-copy">{d.copy}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="values-section">
+    <div class="container values-inner">
+      <span class="eyebrow">Values We Hire And Fire By</span>
+      <div class="values-row">
+        {values.map((v) => <span class="pill">{v}</span>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-row">
+      <h2>Want the team behind your next quarter of growth?</h2>
+      <a href="/contact" class="cta-btn">Book a Free Strategy Call</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { padding: 88px clamp(20px, 5vw, 64px) 64px; }
+  .hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .page-hero h1 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.18; margin: 0 0 24px; color: #fff; }
+  .lede { font-size: 17px; line-height: 1.7; margin: 0 auto; max-width: 56ch; color: var(--text-muted); }
+
+  .story-section { padding: 72px clamp(20px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .story-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 56px; align-items: center; }
+  .story-grid h2 { font-size: clamp(24px, 2.6vw, 32px); color: #fff; margin: 0 0 20px; }
+  .story-grid p { font-size: 15.5px; line-height: 1.75; color: var(--text-muted); margin: 0 0 18px; max-width: 60ch; }
+  .story-photo { margin: 0; border-radius: 20px; overflow: hidden; }
+  .story-photo svg { display: block; width: 100%; height: auto; }
+
+  .mission-section { padding: 80px clamp(20px, 5vw, 64px); }
+  .mission-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .mission-section h2 { font-size: clamp(28px, 3.2vw, 40px); color: #fff; margin: 0; }
+
+  .diffs-section { padding: 80px clamp(20px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--border); }
+  .diffs-heading { text-align: center; margin-bottom: 48px; }
+  .diffs-heading h2 { font-size: clamp(26px, 3vw, 38px); color: #fff; margin: 0; }
+  .diffs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+  .diffs-grid .card { background: var(--bg); }
+  .diff-num { font-family: var(--font-heading); font-weight: 700; font-size: 13px; color: var(--accent); margin: 0 0 14px; letter-spacing: 0.04em; }
+  .diffs-grid h3 { font-size: 19px; color: #fff; margin: 0 0 10px; }
+  .diff-copy { font-size: 14px; line-height: 1.6; color: var(--text-muted); margin: 0; }
+
+  .values-section { padding: 64px clamp(20px, 5vw, 64px); }
+  .values-inner { max-width: 1280px; margin: 0 auto; text-align: center; }
+  .values-row { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+
+  .cta-banner { background: var(--accent); }
+  .cta-row { padding: 80px clamp(20px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px; }
+  .cta-row h2 { font-size: clamp(26px, 3.4vw, 42px); line-height: 1.15; margin: 0; max-width: 18ch; color: var(--bg); }
+  .cta-btn { text-decoration: none; background: var(--bg); color: var(--accent); padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; transition: transform 0.2s ease; }
+  .cta-btn:hover { transform: translateY(-3px); }
+</style>

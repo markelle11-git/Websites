@@ -1,0 +1,381 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const stats = [
+  { num: '150+', label: 'Brands Served' },
+  { num: '300%', label: 'Average Traffic Increase' },
+  { num: '2.5M+', label: 'Leads Generated' },
+  { num: '98%', label: 'Client Retention' },
+];
+
+const services = [
+  { href: '/services#seo', title: 'Search Engine Optimization', copy: 'Rank higher, get found by the right people, and drive organic growth that lasts.', icon: 'target' },
+  { href: '/services#paid-media', title: 'Pay Per Click Advertising', copy: 'Highly targeted ads that drive qualified traffic and deliver measurable results.', icon: 'send' },
+  { href: '/services#social', title: 'Social Media Marketing', copy: 'Engage your audience, build your brand, and turn followers into customers.', icon: 'social' },
+  { href: '/services#content', title: 'Content Marketing', copy: 'Powerful content that educates, engages, and drives action across every channel.', icon: 'content' },
+  { href: '/services#web-design', title: 'Conversion Rate Optimization', copy: 'We optimize every step of the journey to turn visitors into loyal customers.', icon: 'cro' },
+];
+
+const testimonials = [
+  { quote: 'Citrus rebuilt our funnel in 90 days — our cost per lead dropped 42% and stayed there.', name: 'Priya Anand', role: 'VP Marketing, Meridian Home Co.' },
+  { quote: 'They talk in pipeline and revenue, not impressions. First agency that’s felt like a true partner.', name: 'Dan Whitfield', role: 'Founder, Solstice Fitness' },
+  { quote: 'Our organic traffic tripled in eight months. The reporting alone is worth the retainer.', name: 'Camille Rios', role: 'CMO, Pacific Coast Realty Group' },
+];
+
+const icons: Record<string, string> = {
+  target: '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1.4" fill="#cbff3d"></circle>',
+  send: '<line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>',
+  social: '<path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>',
+  content: '<path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="16" y2="17"></line>',
+  cro: '<circle cx="12" cy="12" r="9"></circle><line x1="12" y1="2" x2="12" y2="5"></line><line x1="12" y1="19" x2="12" y2="22"></line><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"></line><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"></line><circle cx="12" cy="12" r="3"></circle>',
+};
+---
+
+<Layout title="Citrus Connections | Digital Marketing Agency in Tampa, FL" description="Citrus Connections helps ambitious brands grow with data-driven SEO, paid media, social and content marketing built to deliver measurable results." active="home">
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1 class="hero-title cc-fade">
+          <span>Digital Strategies.</span>
+          <span class="accent">Real Connections.</span>
+          <span class="accent">Powerful Growth.</span>
+        </h1>
+        <p class="hero-copy cc-fade cc-delay-1">Citrus Connections helps ambitious brands grow with data-driven marketing, creative storytelling, and performance-focused strategies that deliver results.</p>
+        <a href="/contact" class="btn cc-fade cc-delay-2">
+          Get Your Free Strategy Call
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0a0e17" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+        </a>
+      </div>
+      <div class="hero-visual cc-fade cc-float">
+        <img src="/images/hero.png" alt="Citrus fruit composited with marketing analytics dashboards, representing data-driven growth" />
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="trust-strip">
+    <div class="container">
+      <p class="trust-label">Trusted By Growing Brands</p>
+      <div class="trust-logos">
+        <span class="logo-text">AVANT</span>
+        <span class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M4 4l8 8-8 8"></path><path d="M20 4l-8 8 8 8"></path></svg>Boltshift</span>
+        <span class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><line x1="12" y1="2" x2="12" y2="22"></line><line x1="2" y1="12" x2="22" y2="12"></line><line x1="5" y1="5" x2="19" y2="19"></line><line x1="19" y1="5" x2="5" y2="19"></line></svg>sisyphus</span>
+        <span class="logo-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="3"></circle></svg>CIRCLE</span>
+        <span class="logo-item"><svg width="22" height="22" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="6" fill="#fff"></rect><path d="M8 16V8l8 8V8" stroke="#0a0e17" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg>kanba</span>
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal aria-label="Citrus Connections, by the numbers" class="stats-section">
+    <div class="container stats-inner">
+      <h2>We Turn Clicks Into Customers</h2>
+      <p class="section-copy">We combine creativity, technology, and analytics to attract the right audience, engage them meaningfully, and convert them into loyal customers.</p>
+      <div class="stats-grid">
+        {stats.map((stat) => (
+          <div>
+            <p class="stat-num">{stat.num}</p>
+            <p class="stat-label">{stat.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="services-section">
+    <div class="container">
+      <div class="services-intro" data-reveal>
+        <h2>Our Core Services</h2>
+        <p class="section-copy">End-to-end digital marketing services designed to grow your brand and maximize your ROI — scroll to flip through them.</p>
+      </div>
+    </div>
+    <div class="stack-pin" id="stack-pin">
+      <canvas id="stack-canvas"></canvas>
+      <div class="stack-cards">
+        {services.map((s, i) => (
+          <a href={s.href} class="stack-card" data-stack-card data-index={i}>
+            <span class="stack-icon" set:html={`<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#cbff3d" stroke-width="1.6">${icons[s.icon]}</svg>`}></span>
+            <h3>{s.title}</h3>
+            <p>{s.copy}</p>
+            <span class="learn-more">
+              Learn more
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbff3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+    <div class="services-cta">
+      <a href="/services" class="btn-outline">
+        View All Services
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+    </div>
+  </section>
+
+  <section data-reveal class="case-study-section">
+    <div class="container">
+      <div class="case-heading">
+        <h2>Selected Success Stories</h2>
+        <p class="section-copy">Real results. Real growth. Real impact.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-content">
+          <span class="case-eyebrow">E-Commerce</span>
+          <h3>How We Increased Revenue by 320% for a DTC Brand</h3>
+          <p class="case-copy">Through data-driven ads, optimized funnels, and compelling creative, we helped our client achieve record-breaking growth.</p>
+          <a href="/services" class="case-link">
+            View Case Study
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#cbff3d" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+          <div class="case-metrics">
+            <div><p class="metric-num">320%</p><p class="metric-label">Revenue Increase</p></div>
+            <div><p class="metric-num">2.8X</p><p class="metric-label">ROAS Improvement</p></div>
+            <div><p class="metric-num">45%</p><p class="metric-label">Lower CPA</p></div>
+          </div>
+        </div>
+        <img src="/images/case-study.png" alt="Modern glass office building at night, representing a client success story" class="case-image" />
+      </div>
+    </div>
+  </section>
+
+  <section data-reveal class="testimonials-section">
+    <div class="container">
+      <h2 class="testimonials-heading">What Clients Are Saying</h2>
+      <div class="testimonials-grid">
+        {testimonials.map((t) => (
+          <figure class="card testimonial-card">
+            <blockquote>&ldquo;{t.quote}&rdquo;</blockquote>
+            <figcaption>&mdash; {t.name}, {t.role}</figcaption>
+          </figure>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-row">
+      <h2>Ready to grow past where you're stuck?</h2>
+      <a href="/contact" class="cta-btn">Book Your Free Strategy Call</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero { padding: 88px clamp(20px, 5vw, 64px) 64px; overflow: hidden; }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 48px;
+    align-items: center;
+  }
+  .hero-title { font-size: clamp(34px, 4.6vw, 54px); line-height: 1.15; margin: 0 0 24px; color: #fff; }
+  .hero-title span { display: block; }
+  .hero-title .accent { color: var(--accent); }
+  .hero-copy { font-size: 17px; line-height: 1.7; max-width: 46ch; margin: 0 0 36px; color: var(--text-muted); }
+  .hero-visual { border-radius: 20px; overflow: hidden; }
+  .hero-visual img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+  .cc-fade { animation: ccFadeUp 0.8s ease both; }
+  .cc-delay-1 { animation-delay: 0.15s; }
+  .cc-delay-2 { animation-delay: 0.3s; }
+  .cc-float { animation: ccFadeUp 0.9s ease both, ccFloat 6s ease-in-out infinite 1s; }
+  @keyframes ccFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes ccFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+
+  .trust-strip { padding: 0 clamp(20px, 5vw, 64px) 56px; }
+  .trust-label { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-faint); margin: 0 0 28px; }
+  .trust-logos { display: flex; justify-content: center; align-items: center; gap: clamp(24px, 4vw, 56px); flex-wrap: wrap; opacity: 0.75; }
+  .logo-text { font-family: var(--font-heading); font-weight: 700; font-size: 20px; letter-spacing: 0.08em; color: #fff; }
+  .logo-item { display: flex; align-items: center; gap: 8px; font-family: var(--font-heading); font-weight: 600; font-size: 17px; color: #fff; }
+
+  .stats-section { padding: 72px clamp(20px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .stats-inner { max-width: 1000px; text-align: center; }
+  .stats-section h2 { font-size: clamp(26px, 3vw, 38px); color: #fff; margin: 0 0 16px; }
+  .section-copy { font-size: 16px; line-height: 1.7; color: var(--text-muted); max-width: 52ch; margin: 0 auto 48px; }
+  .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 32px; }
+  .stat-num { font-family: var(--font-heading); font-weight: 700; font-size: clamp(28px, 3vw, 38px); color: var(--accent); margin: 0; }
+  .stat-label { font-size: 14px; color: var(--text-muted); margin: 8px 0 0; }
+
+  .services-section { padding: 80px 0 0; position: relative; }
+  .services-intro { text-align: center; padding-bottom: 32px; }
+  .services-intro h2 { font-size: clamp(28px, 3.2vw, 42px); color: #fff; margin: 0 0 16px; }
+  .services-intro .section-copy { margin: 0 auto; }
+
+  .stack-pin {
+    position: relative;
+    height: 100vh;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  #stack-canvas { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+  .stack-cards {
+    position: relative;
+    width: 100%;
+    max-width: 640px;
+    height: min(64vh, 420px);
+    z-index: 2;
+    padding: 0 clamp(20px, 5vw, 64px);
+    box-sizing: border-box;
+  }
+  .stack-card {
+    position: absolute;
+    inset: 0 clamp(20px, 5vw, 64px);
+    text-decoration: none;
+    color: inherit;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5);
+  }
+  .stack-icon { width: 52px; height: 52px; border-radius: 999px; border: 1px solid rgba(203, 255, 61, 0.4); display: flex; align-items: center; justify-content: center; flex: none; }
+  .stack-card h3 { font-size: 24px; color: #fff; margin: 0; }
+  .stack-card p { font-size: 15px; line-height: 1.7; color: var(--text-muted); margin: 0; max-width: 52ch; }
+  .learn-more { margin-top: auto; display: inline-flex; align-items: center; gap: 8px; color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; }
+
+  .services-cta { text-align: center; padding: 40px clamp(20px, 5vw, 64px) 80px; position: relative; z-index: 2; }
+
+  .case-study-section { padding: 80px clamp(20px, 5vw, 64px); border-top: 1px solid var(--border); }
+  .case-heading { text-align: center; margin-bottom: 44px; }
+  .case-heading h2 { font-size: clamp(28px, 3.2vw, 42px); color: #fff; margin: 0 0 12px; }
+  .case-heading p { font-size: 15.5px; color: rgba(255, 255, 255, 0.55); margin: 0; }
+  .case-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .case-content { padding: 40px; display: flex; flex-direction: column; justify-content: center; gap: 16px; }
+  .case-eyebrow { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+  .case-content h3 { font-size: clamp(22px, 2.4vw, 28px); color: #fff; margin: 0; }
+  .case-copy { font-size: 14.5px; line-height: 1.7; color: var(--text-muted); margin: 0; max-width: 44ch; }
+  .case-link { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--accent); font-weight: 700; font-size: 13px; letter-spacing: 0.04em; text-transform: uppercase; margin-top: 8px; }
+  .case-metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+  .metric-num { font-family: var(--font-heading); font-weight: 700; font-size: 22px; color: var(--accent); margin: 0; }
+  .metric-label { font-size: 12px; color: rgba(255, 255, 255, 0.55); margin: 4px 0 0; }
+  .case-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  .testimonials-section { padding: 80px clamp(20px, 5vw, 64px); background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+  .testimonials-heading { text-align: center; font-size: clamp(26px, 3vw, 38px); color: #fff; margin: 0 0 44px; }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+  .testimonial-card { margin: 0; background: var(--bg); }
+  .testimonial-card blockquote { font-family: var(--font-heading); font-weight: 600; font-size: 17px; line-height: 1.5; color: #fff; margin: 0 0 18px; }
+  .testimonial-card figcaption { font-size: 13px; color: rgba(255, 255, 255, 0.55); }
+
+  .cta-banner { background: var(--accent); }
+  .cta-row { padding: 80px clamp(20px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px; }
+  .cta-row h2 { font-size: clamp(28px, 3.6vw, 44px); line-height: 1.15; margin: 0; max-width: 16ch; color: var(--bg); }
+  .cta-btn { text-decoration: none; background: var(--bg); color: var(--accent); padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; }
+</style>
+
+<script>
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import * as THREE from 'three';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  function setupCardStack() {
+    const pinEl = document.querySelector<HTMLElement>('#stack-pin');
+    const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-stack-card]'));
+    if (!pinEl || !cards.length) return;
+
+    const headerOffset = () => document.querySelector<HTMLElement>('.site-header')?.offsetHeight ?? 0;
+
+    cards.forEach((card, i) => {
+      gsap.set(card, {
+        zIndex: i + 1,
+        yPercent: i === 0 ? 0 : 100,
+        opacity: i === 0 ? 1 : 0,
+        scale: 1,
+        filter: 'brightness(1)',
+      });
+    });
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: pinEl,
+        start: () => 'top top+=' + headerOffset(),
+        end: () => '+=' + cards.length * 400,
+        scrub: 0.3,
+        pin: true,
+        anticipatePin: 1,
+        invalidateOnRefresh: true,
+        snap: {
+          snapTo: 1 / (cards.length - 1),
+          duration: { min: 0.2, max: 0.4 },
+          ease: 'power1.inOut',
+        },
+      },
+    });
+
+    cards.forEach((card, i) => {
+      if (i === 0) return;
+      tl.to(cards[i - 1], { scale: 0.94, y: -18, filter: 'brightness(0.55)', duration: 1, ease: 'power1.out' }, i - 1)
+        .to(card, { yPercent: 0, opacity: 1, duration: 1, ease: 'power2.out' }, i - 1);
+    });
+
+    // Layout shifts after images/fonts finish loading can leave the pin
+    // start/end positions stale, causing the pin to misalign with the header
+    // or clip mid-transition. Recalculate once everything has settled.
+    window.addEventListener('load', () => ScrollTrigger.refresh());
+    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+  }
+
+  function setupParticles() {
+    const canvas = document.querySelector<HTMLCanvasElement>('#stack-canvas');
+    if (!canvas) return;
+    const parent = canvas.parentElement;
+    if (!parent) return;
+    const w = parent.clientWidth;
+    const h = parent.clientHeight;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setSize(w, h);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(60, w / h, 0.1, 1000);
+    camera.position.z = 60;
+    const count = 160;
+    const positions = new Float32Array(count * 3);
+    for (let i = 0; i < count; i++) {
+      positions[i * 3] = (Math.random() - 0.5) * 140;
+      positions[i * 3 + 1] = (Math.random() - 0.5) * 90;
+      positions[i * 3 + 2] = (Math.random() - 0.5) * 80;
+    }
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    const mat = new THREE.PointsMaterial({ color: 0xcbff3d, size: 1.6, transparent: true, opacity: 0.5, sizeAttenuation: true });
+    const points = new THREE.Points(geo, mat);
+    scene.add(points);
+
+    let rafId: number;
+    const animate = () => {
+      points.rotation.y += 0.0009;
+      points.rotation.x += 0.0003;
+      renderer.render(scene, camera);
+      rafId = requestAnimationFrame(animate);
+    };
+    animate();
+
+    const onResize = () => {
+      const w2 = parent.clientWidth;
+      const h2 = parent.clientHeight;
+      renderer.setSize(w2, h2);
+      camera.aspect = w2 / h2;
+      camera.updateProjectionMatrix();
+    };
+    window.addEventListener('resize', onResize);
+  }
+
+  setupCardStack();
+  setupParticles();
+</script>

@@ -1,0 +1,214 @@
+---
+interface Props {
+  active: 'home' | 'about' | 'services' | 'blog' | 'contact';
+}
+const { active } = Astro.props;
+
+const links = [
+  { href: '/', label: 'Home', key: 'home' },
+  { href: '/about', label: 'About', key: 'about' },
+  { href: '/services', label: 'Services', key: 'services' },
+  { href: '/blog', label: 'Blog', key: 'blog' },
+  { href: '/contact', label: 'Contact', key: 'contact' },
+];
+---
+
+<header class="site-header">
+  <div class="container header-row">
+    <a href="/" class="brand">
+      <svg width="30" height="30" viewBox="0 0 30 30">
+        <circle cx="15" cy="15" r="9" fill="none" stroke="#cbff3d" stroke-width="2"></circle>
+        <g stroke="#cbff3d" stroke-width="2" stroke-linecap="round">
+          <line x1="15" y1="0" x2="15" y2="4"></line>
+          <line x1="15" y1="26" x2="15" y2="30"></line>
+          <line x1="0" y1="15" x2="4" y2="15"></line>
+          <line x1="26" y1="15" x2="30" y2="15"></line>
+          <line x1="4.4" y1="4.4" x2="7.2" y2="7.2"></line>
+          <line x1="22.8" y1="22.8" x2="25.6" y2="25.6"></line>
+          <line x1="4.4" y1="25.6" x2="7.2" y2="22.8"></line>
+          <line x1="22.8" y1="7.2" x2="25.6" y2="4.4"></line>
+        </g>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-line1">CITRUS</span>
+        <span class="brand-line2">CONNECTIONS</span>
+      </span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary">
+      {links.map((link) => (
+        <a
+          href={link.href}
+          class="nav-link"
+          class:list={[{ active: link.key === active }]}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <a href="tel:+18135550142" class="phone-btn desktop-only">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      (813) 555-0142
+    </a>
+
+    <button type="button" class="menu-toggle mobile-only" aria-label="Toggle menu" aria-expanded="false" id="menu-toggle">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+    </button>
+  </div>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    {links.map((link) => (
+      <a href={link.href} class="mobile-nav-link" class:list={[{ active: link.key === active }]}>{link.label}</a>
+    ))}
+    <a href="tel:+18135550142" class="mobile-phone-btn">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0a0e17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+      (813) 555-0142
+    </a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .header-row {
+    padding-top: 18px;
+    padding-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: auto;
+    flex: none;
+  }
+  .brand-text {
+    font-family: var(--font-heading);
+    line-height: 1.1;
+  }
+  .brand-line1 {
+    display: block;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.03em;
+  }
+  .brand-line2 {
+    display: block;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: rgba(255, 255, 255, 0.6);
+  }
+  .desktop-nav {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover { color: var(--accent); }
+  .nav-link.active { color: var(--accent); border-bottom-color: var(--accent); }
+  .phone-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 13.5px;
+    font-weight: 700;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .phone-btn:hover { background: var(--accent); color: var(--bg); }
+  .menu-toggle {
+    width: 40px;
+    height: 40px;
+    flex: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: transparent;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent);
+  }
+  .mobile-only { display: none; }
+  .mobile-nav {
+    border-top: 1px solid var(--border);
+    background: var(--bg);
+    padding: 8px clamp(20px, 5vw, 64px) 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mobile-nav[hidden] { display: none; }
+  .mobile-nav-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .mobile-nav-link.active { color: var(--accent); }
+  .mobile-phone-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    text-align: center;
+    color: var(--bg);
+    background: var(--accent);
+    padding: 13px 20px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 700;
+    margin-top: 16px;
+  }
+
+  @media (max-width: 899px) {
+    .desktop-nav { display: none; }
+    .desktop-only { display: none; }
+    .mobile-only { display: flex; }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('mobile-nav');
+  toggle?.addEventListener('click', () => {
+    const isOpen = !nav?.hidden;
+    if (nav) nav.hidden = isOpen;
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+  nav?.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      if (nav) nav.hidden = true;
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>

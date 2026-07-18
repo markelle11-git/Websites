@@ -1,0 +1,127 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const categories = ['SEO', 'Paid Media', 'Social', 'Web Design', 'Email & Reputation'];
+
+const featured = {
+  category: 'SEO',
+  date: 'Jul 2, 2026',
+  readTime: '7 min read',
+  title: 'Why your rankings dropped after the last Google update (and what actually fixes it)',
+  excerpt: 'We audited 40 client sites after the spring core update. The pattern wasn’t thin content or bad backlinks — it was pages trying to rank for too many intents at once. Here’s the exact framework we used to recover traffic within six weeks.',
+};
+
+const posts = [
+  { category: 'Paid Media', readTime: '5 min read', date: 'Jun 24, 2026', title: 'The Google Ads bidding mistake that’s quietly inflating your CPA', excerpt: 'Maximize Conversions looks great in the dashboard and terrible on your P&L. Here’s when to override it and what to switch to instead.' },
+  { category: 'Web Design', readTime: '6 min read', date: 'Jun 15, 2026', title: 'Your homepage has eight seconds. Most spend them on the wrong thing.', excerpt: 'A teardown of five home services websites — and the one layout change that lifted form submissions by double digits across all of them.' },
+  { category: 'Social', readTime: '4 min read', date: 'Jun 3, 2026', title: 'Organic reach is down again. Here’s the posting cadence that’s still working', excerpt: 'We tracked engagement across 30 client accounts for a quarter. The winning formula wasn’t more posts — it was fewer, better-timed ones.' },
+  { category: 'Email & Reputation', readTime: '5 min read', date: 'May 22, 2026', title: 'The three-email sequence that turns a five-star review into a referral', excerpt: 'Most post-purchase flows ask for a review and stop. This sequence keeps going — and it’s responsible for 18% of one client’s new leads.' },
+  { category: 'SEO', readTime: '8 min read', date: 'May 9, 2026', title: 'Local SEO for multi-location businesses: the listing audit we run every quarter', excerpt: 'Duplicate listings and inconsistent NAP data are still the #1 reason multi-location brands lose local pack rankings. Our checklist, step by step.' },
+  { category: 'Paid Media', readTime: '6 min read', date: 'Apr 28, 2026', title: 'What we tell clients before their first LinkedIn Ads campaign', excerpt: 'LinkedIn Ads are expensive for a reason. Here’s how we scope a realistic budget and the targeting mistakes that burn it fastest.' },
+];
+---
+
+<Layout title="Marketing Blog | SEO, PPC & Growth Insights | Citrus Connections" description="Practical SEO, paid media, content and web design insights from the Citrus Connections team — no fluff, just what's working for our clients right now." active="blog">
+
+  <section class="page-hero">
+    <div class="container hero-inner">
+      <span class="eyebrow">Blog</span>
+      <h1>Notes from inside real client accounts.</h1>
+      <p class="lede">No recycled listicles — just what's actually moving rankings, ad costs and conversion rates for the businesses we run campaigns for.</p>
+    </div>
+  </section>
+
+  <section data-reveal class="featured-section">
+    <div class="container">
+      <article class="featured-card">
+        <figure class="featured-photo" aria-hidden="true">
+          <svg viewBox="0 0 400 300" role="img" aria-label="Illustration for the featured article">
+            <rect width="400" height="300" fill="#0a0e17"/>
+            <rect x="30" y="40" width="150" height="10" rx="5" fill="rgba(203,255,61,0.5)"/>
+            <rect x="30" y="70" width="260" height="14" rx="6" fill="rgba(255,255,255,0.3)"/>
+            <rect x="30" y="100" width="220" height="14" rx="6" fill="rgba(255,255,255,0.15)"/>
+            <polyline points="30,240 90,200 150,220 210,150 270,180 330,110" fill="none" stroke="#cbff3d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </figure>
+        <div class="featured-content">
+          <div class="featured-meta">
+            <span class="tag-pill">{featured.category}</span>
+            <span class="meta-text">{featured.date} &middot; {featured.readTime}</span>
+          </div>
+          <h2>{featured.title}</h2>
+          <p>{featured.excerpt}</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="categories-section">
+    <div class="container categories-row">
+      {categories.map((cat) => <span class="pill">{cat}</span>)}
+    </div>
+  </section>
+
+  <section data-reveal class="posts-section">
+    <div class="container posts-grid">
+      {posts.map((post) => (
+        <article class="card post-card">
+          <div class="post-meta">
+            <span class="tag-outline-pill">{post.category}</span>
+            <span class="post-read-time">{post.readTime}</span>
+          </div>
+          <h3>{post.title}</h3>
+          <p class="post-excerpt">{post.excerpt}</p>
+          <span class="post-date">{post.date}</span>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container cta-row">
+      <h2>Want strategies like these run on your own accounts?</h2>
+      <a href="/contact" class="cta-btn">Book a Free Strategy Call</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-hero { padding: 88px clamp(20px, 5vw, 64px) 56px; }
+  .hero-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .page-hero h1 { font-size: clamp(32px, 4.4vw, 52px); line-height: 1.18; margin: 0 0 24px; color: #fff; }
+  .lede { font-size: 17px; line-height: 1.7; margin: 0 auto; max-width: 54ch; color: var(--text-muted); }
+
+  .featured-section { padding: 0 clamp(20px, 5vw, 64px) 56px; }
+  .featured-card {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; align-items: center;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 20px; overflow: hidden;
+  }
+  .featured-photo { margin: 0; height: 100%; }
+  .featured-photo svg { display: block; width: 100%; height: 100%; min-height: 260px; }
+  .featured-content { padding: 32px 32px 32px 0; }
+  .featured-meta { display: flex; gap: 10px; align-items: center; margin-bottom: 16px; }
+  .tag-pill { font-size: 12px; font-weight: 700; color: var(--bg); background: var(--accent); padding: 5px 12px; border-radius: 999px; }
+  .meta-text { font-size: 13px; color: rgba(255, 255, 255, 0.5); }
+  .featured-content h2 { font-size: clamp(22px, 2.6vw, 30px); color: #fff; margin: 0 0 16px; max-width: 20ch; }
+  .featured-content p { font-size: 15px; line-height: 1.7; color: var(--text-muted); margin: 0; max-width: 60ch; }
+
+  .categories-section { padding: 0 clamp(20px, 5vw, 64px) 24px; }
+  .categories-row { display: flex; gap: 10px; flex-wrap: wrap; }
+
+  .posts-section { padding: 24px clamp(20px, 5vw, 64px) 88px; }
+  .posts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .post-card { display: flex; flex-direction: column; gap: 12px; }
+  .post-meta { display: flex; gap: 8px; align-items: center; }
+  .tag-outline-pill { font-size: 11.5px; color: var(--accent); border: 1px solid rgba(203, 255, 61, 0.4); padding: 4px 10px; border-radius: 999px; }
+  .post-read-time { font-size: 12px; color: rgba(255, 255, 255, 0.45); }
+  .post-card h3 { font-size: 18px; line-height: 1.3; color: #fff; margin: 0; }
+  .post-excerpt { font-size: 13.5px; line-height: 1.6; color: var(--text-muted); margin: 0; flex: 1; }
+  .post-date { font-size: 12.5px; color: rgba(255, 255, 255, 0.4); }
+
+  .cta-banner { background: var(--accent); }
+  .cta-row { padding: 80px clamp(20px, 5vw, 64px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 28px; }
+  .cta-row h2 { font-size: clamp(26px, 3.4vw, 42px); line-height: 1.15; margin: 0; max-width: 18ch; color: var(--bg); }
+  .cta-btn { text-decoration: none; background: var(--bg); color: var(--accent); padding: 16px 28px; border-radius: 999px; font-weight: 700; font-size: 13.5px; letter-spacing: 0.04em; text-transform: uppercase; white-space: nowrap; transition: transform 0.2s ease; }
+  .cta-btn:hover { transform: translateY(-3px); }
+</style>
