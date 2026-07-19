@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div class="grid-bg"></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand">
+        <span class="dot"></span>
+        <span class="name">MARK <b>ELLE</b></span>
+      </a>
+      <nav class="links">
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="mailto:mark.elle11@gmail.com" class="nav-cta">Email Mark →</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="m-inner">
+        <a href="#process">Process</a>
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span>Senior WordPress &amp; Webflow Developer — 15+ Years</div>
+          <h1 class="hero-h display">Websites,<br>built to<br><span class="accent">actually ship.</span></h1>
+          <p class="lede">I design, build, and launch high-performing sites on WordPress, Webflow, Shopify and WooCommerce — and now build AI-native sites with Claude Code, Astro and GSAP. Servers to domains to go-live, I run the whole build myself.</p>
+          <div class="hero-actions">
+            <a href="#work" class="btn btn-solid">View the work</a>
+            <a href="mailto:mark.elle11@gmail.com" class="btn btn-outline">Email Mark</a>
+          </div>
+          <div class="hero-meta">
+            <div><div class="num">15+</div><div class="lbl">Years building</div></div>
+            <div><div class="num">300+</div><div class="lbl">Live projects</div></div>
+            <div><div class="num">6</div><div class="lbl">Platforms mastered</div></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-glow" id="heroGlow"></div>
+          <img src="/images/hero-laptop.webp" alt="Laptop mockup of the Mark Elle portfolio homepage" id="heroLaptop">
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-band">
+      <div class="marquee-track mono" id="marquee1"></div>
+    </div>
+
+    <!-- STATS -->
+    <section class="stats">
+      <div class="wrap">
+        <div class="stats-grid">
+          <div class="stat"><div class="n">15<span class="accent">+</span></div><div class="l">Years in production, not tutorials</div></div>
+          <div class="stat"><div class="n">300<span class="accent">+</span></div><div class="l">Live client sites shipped &amp; maintained</div></div>
+          <div class="stat"><div class="n">6</div><div class="l">Platforms: WP, Webflow, Shopify, Woo + AI stack</div></div>
+          <div class="stat"><div class="n">1</div><div class="l">Person handling strategy → server → launch</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section process" id="process">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-eyebrow">How a build runs</span>
+          <h2 class="section-title display">From brief to go-live</h2>
+          <p class="section-sub">No handoffs, no account managers relaying messages. One developer runs discovery, design, build and launch — the same person who set up the last twenty.</p>
+        </div>
+
+        <div class="process-layout">
+          <div class="process-steps">
+            <div class="p-step" data-step="0">
+              <span class="p-num mono">01 / Discover</span>
+              <h3 class="p-title display">Map the site before touching a builder</h3>
+              <p class="p-body">Sitemap, content plan, and a look at what's actually converting for competitors in your space. Onpage SEO structure gets decided here, not bolted on after launch.</p>
+              <div class="p-tags"><span>Content plan</span><span>Sitemap</span><span>Keyword mapping</span></div>
+            </div>
+            <div class="p-step" data-step="1">
+              <span class="p-num mono">02 / Build</span>
+              <h3 class="p-title display">Assemble it in the right system</h3>
+              <p class="p-body">WordPress with Elementor, Divi or GenerateBlocks. Webflow for motion-heavy marketing sites. Shopify or WooCommerce for stores. Or Claude Code + Astro + GSAP when the brief calls for something AI-native and fast.</p>
+              <div class="p-tags"><span>Elementor</span><span>Divi</span><span>Webflow</span><span>Astro</span></div>
+            </div>
+            <div class="p-step" data-step="2">
+              <span class="p-num mono">03 / Launch</span>
+              <h3 class="p-title display">Servers, domains, DNS — handled</h3>
+              <p class="p-body">Hosting setup, domain pointing, SSL, staging-to-production migration. The site goes live without a scramble, and you're not left guessing who owns what.</p>
+              <div class="p-tags"><span>Server setup</span><span>DNS</span><span>SSL</span><span>Go-live</span></div>
+            </div>
+            <div class="p-step" data-step="3">
+              <span class="p-num mono">04 / Track &amp; grow</span>
+              <h3 class="p-title display">Instrument it, then improve it</h3>
+              <p class="p-body">GTM and GA4 wired up correctly from day one, so the data you act on is actually trustworthy. Then it's iteration — onpage SEO, speed, conversion.</p>
+              <div class="p-tags"><span>GTM</span><span>GA4</span><span>Onpage SEO</span></div>
+            </div>
+          </div>
+
+          <div class="process-sticky">
+            <div class="p-visual active" data-visual="0">
+              <div class="vh"><span>sitemap.plan</span><span>01 / discover</span></div>
+              <div class="vb">
+                <span class="v-chip">Structuring content</span>
+                <div class="v-flow">
+                  <span>Home</span>→<span>Services</span>→<span>Location</span>→<span>Contact</span>
+                </div>
+                <div class="v-bar a"></div><div class="v-bar b"></div><div class="v-bar c"></div>
+              </div>
+            </div>
+            <div class="p-visual" data-visual="1">
+              <div class="vh"><span>builder.active</span><span>02 / build</span></div>
+              <div class="vb">
+                <span class="v-chip">Elementor · Divi · Webflow · Astro</span>
+                <div class="v-blocks"><div></div><div></div><div></div></div>
+                <div class="v-bar a"></div>
+              </div>
+            </div>
+            <div class="p-visual" data-visual="2">
+              <div class="vh"><span>deploy.status</span><span>03 / launch</span></div>
+              <div class="vb">
+                <span class="v-chip">DNS propagated · SSL issued</span>
+                <div class="v-flow"><span>Staging</span>→<span>DNS</span>→<span>SSL</span>→<span>Live</span></div>
+                <div class="v-bar b"></div><div class="v-bar c"></div>
+              </div>
+            </div>
+            <div class="p-visual" data-visual="3">
+              <div class="vh"><span>analytics.gtm</span><span>04 / grow</span></div>
+              <div class="vb">
+                <span class="v-chip">GTM + GA4 firing correctly</span>
+                <div class="v-chart"><i style="height:35%"></i><i style="height:55%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:60%"></i><i style="height:85%"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-eyebrow">Selected work</span>
+          <h2 class="section-title display">300-plus sites, six platforms</h2>
+          <p class="section-sub">Real client sites, live right now — from local-service SEO builds to Webflow marketing sites, Divi and Elementor WordPress, and full WooCommerce/Shopify stores.</p>
+        </div>
+
+        <div class="filters" id="filters"></div>
+        <div class="p-grid" id="portfolioGrid"></div>
+      </div>
+    </section>
+
+    <!-- STACK -->
+    <section class="section" id="stack" style="padding-top:0;">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="section-eyebrow">Building AI-native</span>
+          <h2 class="section-title display">The newer half of the stack</h2>
+          <p class="section-sub">Same fifteen years of judgment about structure, speed and conversion — pointed at a faster way of building.</p>
+        </div>
+        <div class="stack-strip">
+          <div class="stack-card">
+            <span class="k mono">Claude Code</span>
+            <h4 class="display">Development, sped up</h4>
+            <p>Full builds — components, interactions, content wiring — run through an agentic coding workflow instead of a page-builder queue.</p>
+          </div>
+          <div class="stack-card">
+            <span class="k mono">Astro Build</span>
+            <h4 class="display">Shipped lean</h4>
+            <p>Static-first output means the sites load fast by default, with JavaScript only where it's actually earning its keep.</p>
+          </div>
+          <div class="stack-card">
+            <span class="k mono">GSAP</span>
+            <h4 class="display">Motion with intent</h4>
+            <p>Scroll-triggered reveals, pinned sections, and micro-interactions — used to guide attention, not just to move things.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MARQUEE 2 -->
+    <div class="marquee-band">
+      <div class="marquee-track mono" id="marquee2"></div>
+    </div>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="wrap" style="max-width:820px;">
+        <div class="section-head">
+          <span class="section-eyebrow">Before you email</span>
+          <h2 class="section-title display">Questions worth answering upfront</h2>
+        </div>
+        <div id="faqList"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <div class="wrap">
+        <span class="section-eyebrow mono">Get in touch</span>
+        <h2 class="display">Let's build<br>the next <span class="accent">one.</span></h2>
+        <p>Tell me what platform you're on, or let me tell you which one you should be on. Email's the fastest way to reach me.</p>
+        <div class="email-cta">
+          <a href="mailto:mark.elle11@gmail.com" class="mail mono">mark.elle11@gmail.com</a>
+          <button id="copyBtn" class="mono">Copy</button>
+        </div>
+        <div class="contact-note">Usually replies within one business day</div>
+      </div>
+    </section>
+  </main>
+
+  <div class="case-modal" id="caseModal">
+    <div class="case-panel">
+      <div class="case-hero" id="caseHero">
+        <img id="caseHeroImg" src="" alt="">
+        <button class="case-close" id="caseClose" aria-label="Close">✕</button>
+        <div class="case-hero-content">
+          <span class="case-tag mono" id="caseTag"></span>
+          <h3 class="case-title" id="caseTitle"></h3>
+        </div>
+      </div>
+      <div class="case-scroll">
+        <img id="caseFullImg" src="" alt="" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="wrap foot-row">
+      <p>© 2026 Mark Elle. WordPress · Webflow · Shopify · AI Websites.</p>
+      <div class="status"><i></i>Available for new projects</div>
+    </div>
+  </footer>
+
+  <script>
+    import '../scripts/main.js';
+  </script>
+</Layout>
